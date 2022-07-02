@@ -1,6 +1,8 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import { useLocalStorageState } from 'ahooks'
 import { useEffect } from 'react'
+import { getBgImg } from '../utils/bgImg'
 
 export default function Home() {
   const [imageNumber, setImageNumber] = useLocalStorageState<number | undefined>('imageNumber', {
@@ -36,15 +38,13 @@ export default function Home() {
   }, [])
 
   return (
-    <div className={`h-screen w-screen flex flex-col justify-between items-center relative bg-[url('/bg-image/bg${imageNumber}.jpeg')] bg-cover bg-center select-none`}>
+    <div className={'h-screen w-screen overflow-hidden flex flex-col justify-between items-center relative select-none'}>
       <Head>
         <title>Life in SCNU</title>
         <link rel="icon" href="/scnu_logo.png" />
       </Head>
 
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+      <Image alt="background" src={getBgImg(imageNumber)} layout="fill" objectFit="cover" />
     </div>
   )
 }
