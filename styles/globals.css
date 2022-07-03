@@ -13,6 +13,11 @@ details {
   width: 100%;
   background-color: #ffffffe6;
   border: 0.5px solid rgb(206, 206, 206);
+  transition: all 0.3s ease;
+}
+
+details summary + div {
+  max-height: 0px;
 }
 
 details:hover {
@@ -39,22 +44,34 @@ summary {
   line-height: 1.5rem;
   letter-spacing: normal;
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: 0.3s;
 }
 
-summary::marker {
-  content: '';
+details > summary::-webkit-details-marker {
+  display: none;
 }
 
 summary::after {
-  content: url(../public/arrow/downArrow.svg);
+  content: url(../public/downArrow.svg);
   height: 1.5rem;
-  transition: transform 0.3s;
+  transition: 0.3s;
 }
 
 details[open] {
   background-color: #ffffffbf;
   backdrop-filter: blur(20px);
+  border-left: 0.5px solid #ffffff33;
+  border-right: 0.5px solid #ffffff33;
+  border-bottom: 1rem solid #ffffff33;
+  background-clip: padding-box;
+}
+
+details[open] summary + div {
+  max-height: 2000px;
+}
+
+details[open]:last-child {
+  border-width: 0.5px;
 }
 
 details[open] summary {
@@ -64,5 +81,5 @@ details[open] summary {
 }
 
 details[open] summary::after {
-  content: url(../public/arrow/upArrow.svg);
+  transform: rotate(180deg);
 }

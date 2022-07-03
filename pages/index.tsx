@@ -121,12 +121,12 @@ export default function Home(props: { webSites: WebSiteItem[] }) {
             })
           }} />
 
-          <div className="w-full flex gap-4 p-3 bg-white hover:bg-[#ffffff80] backdrop-blur-xl rounded">
+          <div className="w-full flex gap-4 p-3 bg-[#ffffffe6] group hover:bg-[#ffffffb3] backdrop-blur-xl rounded">
             <input type="text" className="flex-grow bg-transparent outline-none placeholder-gray-600 hover:placeholder-gray-50" placeholder="Search" value={searchText} onChange={ev => setSearchText(ev.target.value)} onKeyPress={(ev) => {
               if (ev.key === 'Enter')
                 search()
             }} />
-            <button className="flex-none text-2xl text-gray-800 hover:text-blue-400" onClick={() => {
+            <button className="flex-none text-2xl text-gray-800 group-hover:text-blue-500" onClick={() => {
               search()
             }}>
               <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
@@ -168,10 +168,10 @@ export default function Home(props: { webSites: WebSiteItem[] }) {
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-3 pb-4 px-4">
                   {webSite.items.map((item: WebSite) => {
                     return (
-                      <div key={item.name} className="border-[0.5px] border-[#ffffffb3] p-4 lg:p-3 text-[#00000099] bg-[#ffffffb3]">
-                        <div className="text-sm font-medium">{item.name}</div>
+                      <a key={item.name} href={item.link} target="_blank" rel="noreferrer" className="border-[0.5px] border-[#ffffffb3] p-4 lg:p-3 text-[#00000099] bg-[#ffffffb3]">
+                        <div className="text-sm font-medium mb-1">{item.name}</div>
                         <div className="text-sm font-light">{item.description}</div>
-                      </div>
+                      </a>
                     )
                   })}
                 </div>
