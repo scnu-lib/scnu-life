@@ -42,6 +42,7 @@ export default function Home(props: { webSites: WebSiteItem[] }) {
     defaultValue: 'baidu',
   })
   const [searchText, setSearchText] = useState('')
+  const [isCopy, setIsCopy] = useState(false)
   const webSites = props.webSites
 
   const search = () => {
@@ -81,6 +82,13 @@ export default function Home(props: { webSites: WebSiteItem[] }) {
         <link rel="icon" href="/scnu_logo.png" />
       </Head>
 
+      <dialog open={isCopy} className="fixed top-1/2  w-80 h-20 z-20 bg-green-200 p-6 rounded-lg shadow-2xl">
+        <p className="text-gray-700">快把链接分享给小伙伴吧！🎉</p>
+        <button className="absolute top-4 right-4 text-center text-gray-500" onClick={() => {
+          setIsCopy(false)
+        }}>Close</button>
+      </dialog>
+
       <div className="h-screen w-screen fixed top-0 left-0 -z-10">
         <Image alt="background" src={getBgImg(imageNumber)} layout="fill" objectFit="cover" objectPosition="center" />
       </div>
@@ -99,6 +107,7 @@ export default function Home(props: { webSites: WebSiteItem[] }) {
             </a>
             <button onClick={() => {
               navigator.clipboard.writeText(window.location.href)
+              setIsCopy(true)
             }}>
               <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                 <path fill="currentColor" d="M14 3v2h3.59l-9.83 9.83l1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z" />
