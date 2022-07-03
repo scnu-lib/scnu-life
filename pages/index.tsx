@@ -4,6 +4,7 @@ import { useLocalStorageState } from 'ahooks'
 import { useEffect, useState } from 'react'
 import { getBgImg } from '../utils/bgImg'
 import { getSearchLogo } from '../utils/searchLogo'
+import { webSites } from '../db/data'
 
 const engineList = new Map([
   ['baidu', 'https://www.baidu.com/s?wd='],
@@ -11,7 +12,26 @@ const engineList = new Map([
   ['google', 'https://www.google.com/search?q='],
 ])
 
-export default function Home() {
+interface WebSite {
+  name: string
+  link: string
+  description: string
+}
+
+interface WebSiteItem {
+  title: string
+  items: WebSite[]
+}
+
+export const getStaticProps = async () => {
+  return {
+    props: {
+      webSites,
+    },
+  }
+}
+
+export default function Home(props: { webSites: WebSiteItem[] }) {
   const [imageNumber, setImageNumber] = useLocalStorageState<number | undefined>('imageNumber', {
     defaultValue: 0,
   })
@@ -22,6 +42,7 @@ export default function Home() {
     defaultValue: 'baidu',
   })
   const [searchText, setSearchText] = useState('')
+  const webSites = props.webSites
 
   const search = () => {
     const url = engineList.get(searchEngine) + searchText
@@ -54,15 +75,17 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="h-screen w-screen overflow-hidden flex flex-col justify-between items-center relative select-none">
+    <div className="h-screen w-screen overflow-y-auto flex flex-col justify-between items-center select-none">
       <Head>
         <title>Life in SCNU</title>
         <link rel="icon" href="/scnu_logo.png" />
       </Head>
 
-      <Image alt="background" src={getBgImg(imageNumber)} layout="fill" objectFit="cover" />
+      <div className="h-screen w-screen fixed top-0 left-0 -z-10">
+        <Image alt="background" src={getBgImg(imageNumber)} layout="fill" objectFit="cover" objectPosition="center" />
+      </div>
 
-      <header className="h-14 lg:h-16 w-screen fixed top-0 bg-[#00000033] border-[#00000033] shadow-lg backdrop-blur-xl">
+      <header className="h-14 lg:h-16 w-screen fixed top-0 z-10 bg-[#00000033] border-[#00000033] shadow-lg backdrop-blur-xl">
         <div className="h-14 lg:h-16 flex justify-between items-center px-4 py-1 text-gray-100">
           <div className="font-sans text-xl">Life In SCNU</div>
           <div className="flex gap-3 text-2xl">
@@ -85,8 +108,8 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="w-full mt-12 pt-14 lg:pt-16 absolute flex flex-col items-center">
-        <section className="w-full lg:w-5/6 p-3 flex flex-col justify-between items-center gap-10">
+      <main className="w-full mt-12 pt-14 lg:pt-16 flex flex-col items-center relative z-0">
+        <section className="basic-section gap-10">
           <Image alt="searchLogo" src={getSearchLogo(searchEngine)} width={210} height={76} className="cursor-pointer" onClick={() => {
             setSearchEngine((prev: string) => {
               if (prev === 'baidu')
@@ -98,12 +121,12 @@ export default function Home() {
             })
           }} />
 
-          <div className="w-full flex gap-4 p-3 bg-[#ffffff80] backdrop-blur-xl rounded">
-            <input type="text" className="flex-grow bg-transparent outline-none placeholder-gray-50" placeholder="Search" value={searchText} onChange={ev => setSearchText(ev.target.value)} onKeyPress={(ev) => {
+          <div className="w-full flex gap-4 p-3 bg-white hover:bg-[#ffffff80] backdrop-blur-xl rounded">
+            <input type="text" className="flex-grow bg-transparent outline-none placeholder-gray-600 hover:placeholder-gray-50" placeholder="Search" value={searchText} onChange={ev => setSearchText(ev.target.value)} onKeyPress={(ev) => {
               if (ev.key === 'Enter')
                 search()
             }} />
-            <button className="flex-none text-2xl text-gray-800" onClick={() => {
+            <button className="flex-none text-2xl text-gray-800 hover:text-blue-400" onClick={() => {
               search()
             }}>
               <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
@@ -135,6 +158,26 @@ export default function Home() {
               </svg>
             </button>
           </div>
+        </section>
+
+        <section className="basic-section">
+          {webSites.map((webSite: WebSiteItem) => {
+            return (
+              <details key={webSite.title}>
+                <summary>{webSite.title}</summary>
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-3 pb-4 px-4">
+                  {webSite.items.map((item: WebSite) => {
+                    return (
+                      <div key={item.name} className="border-[0.5px] border-[#ffffffb3] p-4 lg:p-3 text-[#00000099] bg-[#ffffffb3]">
+                        <div className="text-sm font-medium">{item.name}</div>
+                        <div className="text-sm font-light">{item.description}</div>
+                      </div>
+                    )
+                  })}
+                </div>
+              </details>
+            )
+          })}
         </section>
       </main>
     </div>

@@ -1,0 +1,298 @@
+export const webSites = [
+  {
+    title: '萌新必读',
+    items: [
+      {
+        name: '新生必看',
+        link: 'https://www.yuque.com/ff282l/gm8kgc/ecpz8l',
+        description: '看了这些基本不用到处问人了',
+      },
+      {
+        name: '统一身份认证',
+        link: 'https://authserver.nju.edu.cn/authserver/login',
+        description: '初始账户学工号，初始密码身份证（全部或后6位）',
+      },
+      {
+        name: '校园网登录',
+        link: 'http://p.nju.edu.cn',
+        description: '初始账户学工号，初始密码身份证（全部）',
+      },
+      {
+        name: '公众号目录',
+        link: 'https://www.yuque.com/ff282l/gm8kgc/chfp1l',
+        description: '哦我的上帝啊，你毕业都不一定关注全了',
+      },
+    ],
+  },
+  {
+    title: '校园生活',
+    items: [
+      {
+        name: '衣食住行',
+        link: 'https://www.yuque.com/ff282l/gm8kgc/nbmig7',
+        description: '杂七杂八的生活服务',
+      },
+      {
+        name: '医疗相关',
+        link: 'https://www.yuque.com/ff282l/gm8kgc/rs2gzq',
+        description: '身体健康第一位~',
+      },
+      {
+        name: '实用服务',
+        link: 'https://www.yuque.com/ff282l/gm8kgc/pydwn1',
+        description: '各种学生组织的实用服务',
+      },
+      {
+        name: '社团实践',
+        link: 'https://www.yuque.com/ff282l/gm8kgc/osy13s',
+        description: '社团、志愿、就业、创业相关',
+      },
+      {
+        name: '宿舍相关',
+        link: 'https://www.yuque.com/ff282l/gm8kgc/bau88f',
+        description: '联系宿管、调宿事宜',
+      },
+      {
+        name: '校园服务',
+        link: 'https://www.nju.edu.cn/3688/list.htm',
+        description: '南大校历、各单位电话黄页',
+      },
+      {
+        name: '本科学工通讯录',
+        link: 'https://xgc.nju.edu.cn/1799/list.htm',
+        description: '实在不行问问辅导员',
+      },
+      {
+        name: '小百合 BBS',
+        link: 'http://bbs.nju.edu.cn/',
+        description: '求职信息、校长信箱比较有用',
+      },
+      {
+        name: '学生服务',
+        link: 'http://xsgl.nju.edu.cn',
+        description: '奖学金、勤工俭学等常用网站',
+      },
+      {
+        name: '证件办理',
+        link: 'https://www.yuque.com/ff282l/gm8kgc/ubnps4',
+        description: '校园卡、学生证、研究生证等（补）办理',
+      },
+      {
+        name: '户籍管理',
+        link: 'https://bwc.nju.edu.cn/bszn/bmfw/index.html',
+        description: '管理户口迁移等等事务',
+      },
+    ],
+  },
+  {
+    title: '学习科研',
+    items: [
+      {
+        name: '教务系统',
+        link: 'http://elite.nju.edu.cn/jiaowu/',
+        description: '密码是大小写字母加数字',
+      },
+      {
+        name: '研究生学籍与教学管理系统',
+        link: 'http://pyb.nju.edu.cn/',
+        description: '研究生版教务系统',
+      },
+      {
+        name: '图书馆纸本检索',
+        link: 'http://opac.nju.edu.cn/#/Home',
+        description: '快看看你想看的书它有没有、在哪找',
+      },
+      {
+        name: '图书馆指南',
+        link: 'http://mooc1.chaoxing.com/zt/200026884.html',
+        description: '图书馆出品的新生指南',
+      },
+      {
+        name: '图书馆服务',
+        link: 'http://lib.nju.edu.cn/index.htm#Page3',
+        description: '图书馆热门服务',
+      },
+      {
+        name: '图书馆电子资源',
+        link: 'https://www.yuque.com/ff282l/gm8kgc/fmd1wl',
+        description: '各类数据库、学术杂志免费下载',
+      },
+      {
+        name: '研讨间预约',
+        link: 'http://lib.nju.edu.cn/rmfw/sbfw/yjxjyy.htm',
+        description: '（需要校园网）在图书馆研讨间愉快地讨（wan）论（shua）',
+      },
+      {
+        name: '课程网站',
+        link: 'https://www.yuque.com/ff282l/gm8kgc/sr0kbw',
+        description: '各种课要用的网站，还有经典悦读电子书',
+      },
+      {
+        name: '培养课表',
+        link: 'https://www.yuque.com/ff282l/gm8kgc/ysdgpd',
+        description: '课表、培养计划、拔尖计划等',
+      },
+      {
+        name: '交换生系统',
+        link: 'http://elite.nju.edu.cn/exchangesystem/',
+        description: '本科阶段交流生和访问学生的一些信息',
+      },
+      {
+        name: '国际交流合作处',
+        link: 'http://stuex.nju.edu.cn/',
+        description: '交流交换的项目信息',
+      },
+      {
+        name: '高性能计算中心',
+        link: 'https://hpc.nju.edu.cn/',
+        description: '电脑不够算，快找HPC',
+      },
+    ],
+  },
+  {
+    title: '信息服务',
+    items: [
+      {
+        name: '南大APP',
+        link: 'https://oi.nju.edu.cn/21607/list.htm',
+        description: '新版南大APP，集成各类常用功能',
+      },
+      {
+        name: '南大邮箱',
+        link: 'https://mail.smail.nju.edu.cn/',
+        description: '全日制学生人手一个，可以用来薅免费教育版软件、教育优惠',
+      },
+      {
+        name: 'VPN客户端',
+        link: 'https://vpn.nju.edu.cn/',
+        description: 'VPN客户端，可以访问只有校园网才能访问的全部资源',
+      },
+      {
+        name: 'VPN网页版',
+        link: 'https://vpn3.nju.edu.cn/',
+        description: '无需下载客户端，可以访问只有校园网才能访问的全部资源',
+      },
+      {
+        name: '正版软件',
+        link: 'https://itsc.nju.edu.cn/zbrj/list.htm',
+        description: '学校购买的常用正版系统和软件',
+      },
+      {
+        name: '邮箱别名',
+        link: 'http://mailm.nju.edu.cn:8080',
+        description: '学生邮箱一堆数字看起来一点也不时髦？试试这个',
+      },
+      {
+        name: 'Eduroam',
+        link: 'https://itsc.nju.edu.cn/21436/list.htm',
+        description: '全球教育科研机构无线网络漫游',
+      },
+      {
+        name: '校园卡网络自助服务系统',
+        link: 'https://oa.nju.edu.cn/ecard/',
+        description: '（需要校园网）查看校园卡信息，可以下载校园卡黑照',
+      },
+      {
+        name: 'e-Science中心',
+        link: 'https://sci.nju.edu.cn/',
+        description: '南大云盘、镜像、git、测速等服务',
+      },
+    ],
+  },
+  {
+    title: '趣味南大',
+    items: [
+      {
+        name: '招标办公室',
+        link: 'http://zb.nju.edu.cn/',
+        description: '来看看学校最近又买了啥~',
+      },
+      {
+        name: '数据中心',
+        link: 'https://data.nju.edu.cn',
+        description: '可以看见一些令人脸红心跳的东西（需校园网）',
+      },
+      {
+        name: '网络电视',
+        link: 'http://tv.nju.edu.cn/',
+        description: '（需要校园网）神奇的电视直播站',
+      },
+    ],
+  },
+  {
+    title: '学生项目',
+    items: [
+      {
+        name: '南哪指南',
+        link: 'https://github.com/idealclover/life-in-nju',
+        description: '就是本项目！',
+      },
+      {
+        name: '南哪课表',
+        link: 'http://download.weigongju.org/79814667992',
+        description: '南哪人的专属课程表 APP',
+      },
+      {
+        name: '南京大学学位论文XeLaTeX模板',
+        link: 'https://github.com/Haixing-Hu/nju-thesis',
+        description: '毕业论文的XeLaTeX模板',
+      },
+      {
+        name: '南京大学本科毕业论文Latex模板',
+        link: 'https://github.com/ZLCao/NJUBachelor',
+        description: '本科毕业论文的Latex模板',
+      },
+      {
+        name: '课程评估自动化',
+        link: 'https://fuck.idealclover.cn/',
+        description: '每学期的课程评估简直噩梦',
+      },
+    ],
+  },
+  {
+    title: '投稿建议',
+    items: [
+      {
+        name: '讨论群',
+        link: 'https://jq.qq.com/?_wv=1027&k=5hsPQa6',
+        description: '加入讨论群提出意见建议！',
+      },
+      {
+        name: '投稿与建议',
+        link: 'https://github.com/idealclover/life-in-nju/issues',
+        description: '在这里新建 issues',
+      },
+      {
+        name: '项目 GitHub 地址',
+        link: 'https://github.com/idealclover/life-in-nju',
+        description: '网站的源代码存放于此',
+      },
+    ],
+  },
+  {
+    title: '友情链接',
+    items: [
+      {
+        name: 'idealclover',
+        link: 'https://idealclover.top',
+        description: '@idealclover 是本项目的发起人',
+      },
+      {
+        name: '毛若昕',
+        link: 'https://maorx.cn/',
+        description: '@毛若昕 负责本项目的设计建议和背景图片摄影',
+      },
+      {
+        name: 'LadderOperator',
+        link: 'https://ladderoperator.top/',
+        description: '@LadderOperator 负责本项目的数据整理',
+      },
+      {
+        name: 'zgq354',
+        link: 'https://blog.izgq.net/',
+        description: '@zgq354 负责本项目的性能优化',
+      },
+    ],
+  },
+]
+

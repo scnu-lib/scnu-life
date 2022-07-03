@@ -1,3 +1,68 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .basic-section {
+    @apply w-full lg:w-5/6 p-3 flex flex-col justify-between items-center
+  }
+}
+
+details {
+  position: relative;
+  width: 100%;
+  background-color: #ffffffe6;
+  border: 0.5px solid rgb(206, 206, 206);
+}
+
+details:hover {
+  background-color: #ffffff;
+}
+
+details:first-child {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+details:last-child {
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  color: #00000099;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: normal;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+summary::marker {
+  content: '';
+}
+
+summary::after {
+  content: url(../public/arrow/downArrow.svg);
+  height: 1.5rem;
+  transition: transform 0.3s;
+}
+
+details[open] {
+  background-color: #ffffffbf;
+  backdrop-filter: blur(20px);
+}
+
+details[open] summary {
+  height: 4rem;
+  font-size: 0.9375rem;
+  line-height: 0.9375rem;
+}
+
+details[open] summary::after {
+  content: url(../public/arrow/upArrow.svg);
+}
